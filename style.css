@@ -1,0 +1,110 @@
+
+img {
+    max-height: 100%;
+}
+
+body {
+    background-color: #7CB9E8;
+    /*to remove*/
+}
+
+
+
+#main-box {
+    background-color: white;
+    height: 780px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#left-main{
+    height: 100%;
+    width: 35%;
+    background-color: blue;
+    border-right: 1px rgb(54,84,254) solid; 
+}
+
+#right-main{
+    height: 100%;
+    background-color: chartreuse;
+    width: 65%;
+}
+
+#user-name{
+height: 60px;
+width: 100%;
+background-color: rgb(234,234,234);
+
+}
+
+#user-name img{
+    border-radius: 50%;
+    width: 16%;
+}
+
+#bot-names{
+height: 60px;
+width: 100%;
+background-color: rgb(234,234,234);
+}
+
+#bot-names img{
+        border-radius: 50%;
+        width: 8%;
+}
+
+#notification {
+height: 90px;
+width: 100%;
+background-color: rgb(142,218,251) ;
+}
+
+#search-chats {
+    height: 70px;
+    width: 100%;
+    background-color: rgb(250,250,250);
+    padding: 20px
+
+}
+
+#search-chats-input {
+    width: 100%;
+}
+
+#contacts {
+    width: 100%;
+    height: 560px;
+    background-color: rgb(255,255,255);
+    padding: 20px;
+    overflow-y: scroll;
+}
+
+#contacts img{
+    width: 15%;
+    border-radius: 50%;
+}
+
+
+
+#chat-box {
+    width: 100%;
+    height: 640px;
+    background-image: url(img/mine.jpg);
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+#new-message {
+    height: 80px;
+    width: 100%;
+    background-color:rgb(243,238,233);
+    padding: 10px;
+}
+
+#insert-message {
+    height: 100%;
+    width: 80%;
+    margin: 0 30px;
+}
+
+
