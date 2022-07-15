@@ -4,7 +4,7 @@ img {
 }
 
 body {
-    background-color: #7CB9E8;
+    background-image: linear-gradient(to bottom, rgb(1,150,136) 15%, rgb(219,219,211) 15%, rgb(219,219,211) 100%)
     /*to remove*/
 }
 
@@ -87,16 +87,40 @@ background-color: rgb(142,218,251) ;
     height: 660px;
     background-image: url(img/mine.jpg);
     overflow-y: scroll;
-    padding: 20px;
+    padding: 40px;
 }
 
-.useruser-message-left {
-    background-color: rgb(255,255,255)
+.message-container {
+    width: 100%;
+    display: flex;
 }
 
-.useruser-message-right {
+.message-container.left {
+    justify-content: flex-start;
+}
+
+.message-container.right {
+    justify-content: flex-end;
+}
+
+
+#user-message {
+    min-height: 20px;
+    border-radius: 7%;
     background-color: rgb(213,249,186);
+    width: 60%;
+    padding: 10px;
 }
+
+
+#contact-message {
+    min-height: 20px;
+    width: 60%;
+    background-color: rgb(255,255,255);
+    border-radius: 7%;
+    padding: 10px;
+}
+
 
 #new-message {
     height: 80px;
