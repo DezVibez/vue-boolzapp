@@ -99,11 +99,11 @@ background-color: rgb(142,218,251) ;
     display: none;
 }
 
-.message-container.left {
+.message-container.received {
     justify-content: flex-start;
 }
 
-.message-container.right {
+.message-container.sent {
     justify-content: flex-end;
 }
 

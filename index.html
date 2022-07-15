@@ -101,21 +101,25 @@
                             </div>
 
                             <div id="chat-box">
-                                <!--message container dovrà esserci in base al contatto selezionato-->
-                                <div class="message-container right active">
+                                <!--message container dovrà esserci in base al contatto selezionato
+                                classe active cambierà in base al contatto selezionato-->
 
-                                    <div id="user-message" class="my-2">
-                                        aaa
+                                <div v-for="(contact,index) in contacts">
+                                    <div class="message-container sent active" >
+
+                                        <div id="user-message" class="my-2">
+                                            aaa
+                                        </div>
+
                                     </div>
 
-                                </div>
+                                    <div class="message-container received active" >
 
-                                <div class="message-container left active">
+                                        <div id="contact-message" class="my-2">
+                                            aaa
+                                        </div>
 
-                                    <div id="contact-message" class="my-2">
-                                        aaa
                                     </div>
-
                                 </div>
                                 
                                 
