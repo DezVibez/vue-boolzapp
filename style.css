@@ -4,8 +4,7 @@ img {
 }
 
 body {
-    background-image: linear-gradient(to bottom, rgb(1,150,136) 15%, rgb(219,219,211) 15%, rgb(219,219,211) 100%)
-    /*to remove*/
+    background-image: linear-gradient(to bottom, rgb(1,150,136) 15%, rgb(219,219,211) 15%, rgb(219,219,211) 100%);
 }
 
 .main-container {
@@ -80,6 +79,11 @@ background-color: rgb(142,218,251) ;
     border-radius: 50%;
 }
 
+.contacts-card:hover {
+    background-color: rgb(232,235,235);
+    cursor: pointer;
+}
+
 
 
 #chat-box {
@@ -92,7 +96,7 @@ background-color: rgb(142,218,251) ;
 
 .message-container {
     width: 100%;
-    display: flex;
+    display: none;
 }
 
 .message-container.left {
@@ -101,6 +105,12 @@ background-color: rgb(142,218,251) ;
 
 .message-container.right {
     justify-content: flex-end;
+}
+
+/*Se ha classe active è visibile e flexa i messaggi come deve
+quindi la classe active andrà generata dinamicamente in js*/
+.active{
+    display: flex;
 }
 
 
