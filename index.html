@@ -107,7 +107,7 @@
                                 <div v-for="contact in contacts">
                                     <div v-for="(message, index) in contact.messages">
 
-                                        <div class="message-container sent active" v-if="message.status === 'sent' && contact.name === selectedChat ">
+                                        <div class="message-container sent " v-if="message.status === 'sent' && contact.name === selectedChat ">
 
                                             <div  id="user-message" class="my-2" >
                                                 {{message.text}} <br> <small>{{message.date}}</small> 
@@ -115,7 +115,7 @@
 
                                         </div>
 
-                                        <div class="message-container received active " v-if="message.status === 'received' && contact.name === selectedChat ">
+                                        <div class="message-container received " v-if="message.status === 'received' && contact.name === selectedChat ">
 
                                             <div id="contact-message" class="my-2">
                                                 {{message.text}} <br> <small>{{message.date}}</small> 

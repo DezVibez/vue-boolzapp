@@ -96,7 +96,7 @@ background-color: rgb(142,218,251) ;
 
 .message-container {
     width: 100%;
-    display: none;
+    display: flex;
 }
 
 .message-container.received {
