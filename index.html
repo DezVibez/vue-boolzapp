@@ -105,19 +105,19 @@
                                 classe active cambierà in base al contatto selezionato-->
 
                                 <div v-for="contact in contacts">
-                                    <div v-for="message in contact.messages">
+                                    <div v-for="(message, index) in contact.messages">
 
-                                        <div class="message-container sent active" >
+                                        <div class="message-container sent active" v-if="message.status === 'sent'">
 
-                                            <div v-if="message.status === 'sent'" id="user-message" class="my-2" >
+                                            <div  id="user-message" class="my-2" >
                                                 {{message.text}}
                                             </div>
 
                                         </div>
 
-                                        <div class="message-container received " >
+                                        <div class="message-container received active " v-if="message.status === 'received'">
 
-                                            <div v-id="contact-message" class="my-2">
+                                            <div id="contact-message" class="my-2">
                                                 {{message.text}}
                                             </div>
 
