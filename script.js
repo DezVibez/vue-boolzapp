@@ -36,7 +36,7 @@ const root = new Vue({
     el: "#root",
     data:{
 
-      imgString: this.contacts.avatar,
+        selectedStatus: false,
 
         user: {
           name: 'Nome Utente',
@@ -48,6 +48,7 @@ const root = new Vue({
             name: 'Michele',
             avatar: '_1',
             visible: true,
+            
             messages: [{
               date: '10/01/2020 15:30:55',
               text: 'Hai portato a spasso il cane?',
@@ -128,9 +129,79 @@ const root = new Vue({
         
     
     methods: {
+    
+      }
+      
+
+      
      
+  
     }
+
+)
+
+
+
+//  DATO UN ARRAY DI STUDENTI...
+
+const students = [
+  {
+    name: 'Marco Lanci',
+    age: 32,
+    class: '3C'
+  },
+  {
+    name: 'Michele Papagni',
+    age: 18,
+    class: '4A'
+  },
+  {
+    name: 'Fabio Forghieri',
+    age: 33,
+    class: '5B'
+  },
+  {
+    name: 'Silvia Rivella',
+    age: 25,
+    class: '5B'
+  },
+  {
+    name: 'Luigi Micco',
+    age: 57,
+    class: '5B'
+  },
+];
+
+// VOGLIO STAMPARE IN CONSOLE I NOMI DI TUTTI GLI STUDENTI
+
+students.forEach((student) => {
+  console.log(student.name);
 })
 
 
+// VOGLIO RACCOGLIERE IN UN ARRAY I NOMI DI TUTTI GLI STUDENTI
+
+const studentNames = students.map((student) => {
+  return student.name;
+  
+});
+
+console.log(studentNames)
+
+// VOGLIO SOLO GLI STUDENTI DAI 30 IN SU
+
+const over30Students = students.filter((student) => {
+  return student.age >= 30
+});
+
+console.log(over30Students)
+
+
+// TROVA LO STUDENTE "Marco Lanci"
+
+const myStudent = students.find((student) => {
+  return student.name === 'Marco Lanci';
+});
+
+console.log(myStudent)
 
