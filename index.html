@@ -60,7 +60,7 @@
 
                             <div id="contacts">
 
-                                <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="">
+                                <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click=" selectedChat = contact.name ">
     
                                     <img :src=" `img/avatar` + contact.avatar + `.jpg` " alt="">
 
@@ -107,18 +107,18 @@
                                 <div v-for="contact in contacts">
                                     <div v-for="(message, index) in contact.messages">
 
-                                        <div class="message-container sent active" v-if="message.status === 'sent'">
+                                        <div class="message-container sent active" v-if="message.status === 'sent' && contact.name === selectedChat ">
 
                                             <div  id="user-message" class="my-2" >
-                                                {{message.text}}
+                                                {{message.text}} <br> <small>{{message.date}}</small> 
                                             </div>
 
                                         </div>
 
-                                        <div class="message-container received active " v-if="message.status === 'received'">
+                                        <div class="message-container received active " v-if="message.status === 'received' && contact.name === selectedChat ">
 
                                             <div id="contact-message" class="my-2">
-                                                {{message.text}}
+                                                {{message.text}} <br> <small>{{message.date}}</small> 
                                             </div>
 
                                         </div>

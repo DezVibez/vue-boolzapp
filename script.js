@@ -36,7 +36,7 @@ const root = new Vue({
     el: "#root",
     data:{
 
-        selectedStatus: false,
+        selectedChat: "",
 
         user: {
           name: 'Nome Utente',
