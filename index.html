@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +11,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
     <!--Importo Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
-    rel="stylesheet" 
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
-    crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <!--Foglio stile css-->
     <link rel="stylesheet" href="style.css">
@@ -21,143 +20,141 @@
     <!--Importo VUE JS-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.4/dist/vue.js"></script>
 </head>
+
 <body>
     <div id="root">
 
         <div class="main-container d-flex p-3">
 
             <div id="left-main">
-                            
-                            <div id="user-name" class="d-flex justify-content-between align-items-center">
-                                <div class="p-3 fs-6">
-                                    <img src="img/avatar_1.jpg" alt="">
-                                    <span>{{user.name}}</span>
-                                </div>
 
-                                <div class="d-flex px-3 fs-5">
-                                    <span>
-                                        <i class="bi bi-arrow-clockwise"></i>
-                                    </span>
-                                    <span>
-                                        <i class="bi bi-chat-left-fill mx-3"></i>
-                                    </span>
-                                    <span>
-                                        <i class="bi bi-three-dots-vertical"></i>
-                                    </span>
-                                </div>
+                <div id="user-name" class="d-flex justify-content-between align-items-center">
+                    <div class="p-3 fs-6">
+                        <img src="img/avatar_1.jpg" alt="">
+                        <span>{{user.name}}</span>
+                    </div>
 
-                            </div>
+                    <div class="d-flex px-3 fs-5">
+                        <span>
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </span>
+                        <span>
+                            <i class="bi bi-chat-left-fill mx-3"></i>
+                        </span>
+                        <span>
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </span>
+                    </div>
 
-                            <div id="notification">
+                </div>
 
-                            </div>
+                <div id="notification">
 
-                            <div id="search-chats">
+                </div>
 
-                                <input id="search-chats-input" type="text" placeholder=" &#128269;     Cerca o inizia una nuova ricerca" value="">
+                <div id="search-chats">
 
-                            </div>
+                    <input id="search-chats-input" type="text"
+                        placeholder=" &#128269;     Cerca o inizia una nuova ricerca" value="">
 
-                            <div id="contacts">
+                </div>
 
-                                <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click=" selectedChat = contact.name ">
-    
-                                    <img :src=" `img/avatar` + contact.avatar + `.jpg` " alt="">
+                <div id="contacts">
 
-                                    <span class="ms-1">{{contact.name}}</span>
-                                </div>
+                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click=" currentIndex = index ">
 
-                                
+                        <img :src=" `img/avatar` + contact.avatar + `.jpg` " alt="">
 
-                            </div>
+                        <span class="ms-1">{{contact.name}}</span>
+                    </div>
 
-                    
+
+
+                </div>
+
+
 
             </div>
 
-                
+
             <div id="right-main">
 
-                            <div id="bot-names" class="d-flex justify-content-between align-items-center">
+                <div id="bot-names" class="d-flex justify-content-between align-items-center">
 
 
-                                <div class="p-3 fs-6">
-                                    <img src="img/avatar_1.jpg" alt="">
-                                    <span>{{user.name}}</span>
-                                </div>
+                    <div class="p-3 fs-6">
+                        <img src="img/avatar_1.jpg" alt="">
+                        <span>{{user.name}}</span>
+                    </div>
 
-                                <div class="d-flex px-3 fs-5">
-                                    <span>
-                                        <i class="bi bi-arrow-clockwise"></i>
-                                    </span>
-                                    <span>
-                                        <i class="bi bi-chat-left-fill mx-3"></i>
-                                    </span>
-                                    <span>
-                                        <i class="bi bi-three-dots-vertical"></i>
-                                    </span>
-                                </div>
+                    <div class="d-flex px-3 fs-5">
+                        <span>
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </span>
+                        <span>
+                            <i class="bi bi-chat-left-fill mx-3"></i>
+                        </span>
+                        <span>
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </span>
+                    </div>
 
+                </div>
+
+                <div id="chat-box">
+
+
+                    <div v-for="(message, index) in contacts[currentIndex].messages" class="my-3 w-100">
+
+                        <div :class="message.status" class="d-flex">
+
+                            <div id="message">
+                                {{message.text}} <br> <small>{{message.date}}</small>
                             </div>
 
-                            <div id="chat-box">
-                                <!--message container dovrà esserci in base al contatto selezionato
-                                classe active cambierà in base al contatto selezionato-->
+                        </div>
 
-                                <div v-for="contact in contacts">
-                                    <div v-for="(message, index) in contact.messages">
 
-                                        <div class="message-container sent " v-if="message.status === 'sent' && contact.name === selectedChat ">
+                    </div>
 
-                                            <div  id="user-message" class="my-2" >
-                                                {{message.text}} <br> <small>{{message.date}}</small> 
-                                            </div>
 
-                                        </div>
 
-                                        <div class="message-container received " v-if="message.status === 'received' && contact.name === selectedChat ">
 
-                                            <div id="contact-message" class="my-2">
-                                                {{message.text}} <br> <small>{{message.date}}</small> 
-                                            </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                
-                            </div>
+                </div>
 
-                            <div id="new-message" class="d-flex justify-content-between align-items-center p-2">
+                <div id="new-message" class="d-flex justify-content-between align-items-center p-2">
 
-                                <span>
-                                    <i class="bi bi-emoji-smile fs-4"></i>
-                                </span>
+                    <span>
+                        <i class="bi bi-emoji-smile fs-4"></i>
+                    </span>
 
-                                <input id="insert-message" type="text" placeholder="scrivi un messaggio">
+                    <input id="insert-message" type="text" placeholder="scrivi un messaggio" v-model=inputText
+                        v-on:keyup.enter= "pushObj">
 
-                                <span>
+                    <span>
 
-                                    <i class="bi bi-mic-fill fs-4"></i>
+                        <i class="bi bi-mic-fill fs-4"></i>
 
-                                </span>
+                    </span>
 
-                            </div>
-                            
-            
-            
+                </div>
+
+
+
             </div>
 
-                
-                
-            </div>
+
+
         </div>
-        
     </div>
-    
-    
+
+    </div>
+
+
 
     <!--collego Javascript-->
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -94,42 +94,28 @@ background-color: rgb(142,218,251) ;
     padding: 40px;
 }
 
-.message-container {
-    width: 100%;
-    display: flex;
+#message {
+    min-height: 20px;
+    border-radius: 7%;
+    padding: 10px;
+    width: 60%;
 }
 
-.message-container.received {
+.received {
     justify-content: flex-start;
+    background-color: rgb(255,255,255);
 }
 
-.message-container.sent {
+.sent {
     justify-content: flex-end;
+    background-color: rgb(213,249,186);
 }
 
 /*Se ha classe active è visibile e flexa i messaggi come deve
 quindi la classe active andrà generata dinamicamente in js*/
-.active{
-    display: flex;
-}
 
 
-#user-message {
-    min-height: 20px;
-    border-radius: 7%;
-    background-color: rgb(213,249,186);
-    width: 60%;
-    padding: 10px;
-}
 
-
-#contact-message {
-    min-height: 20px;
-    width: 60%;
-    background-color: rgb(255,255,255);
-    border-radius: 7%;
-    padding: 10px;
-}
 
 
 #new-message {

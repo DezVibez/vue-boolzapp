@@ -36,7 +36,11 @@ const root = new Vue({
     el: "#root",
     data:{
 
+        currentIndex: 0,
+
         selectedChat: "",
+
+        inputText: "",
 
         user: {
           name: 'Nome Utente',
@@ -48,7 +52,6 @@ const root = new Vue({
             name: 'Michele',
             avatar: '_1',
             visible: true,
-            
             messages: [{
               date: '10/01/2020 15:30:55',
               text: 'Hai portato a spasso il cane?',
@@ -83,7 +86,7 @@ const root = new Vue({
             {
               date: '20/03/2020 16:35:00',
               text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-              status: 'received'
+              status: 'sent'
             }
             ],
           },
@@ -129,15 +132,26 @@ const root = new Vue({
         
     
     methods: {
-    
+
+      pushObj(){
+        let obj = {
+          date: '10/01/2020 15:50:00',
+          text: this.inputText,
+          status: 'sent'
+        }
+
+        this.contacts[this.currentIndex].messages.push(obj)
+
+        this.inputText = ""
       }
+      
       
 
       
      
   
     }
-
+  }  
 )
 
 
