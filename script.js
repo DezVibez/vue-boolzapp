@@ -166,15 +166,13 @@ const root = new Vue({
     },
 
     getRandomAnswers(){
-      
-      return randomNumber = Math.floor(Math.random() * (this.randomAnswers.length + 1))
-      
+      return randomNumber = Math.floor(Math.random() * (this.randomAnswers.length))
     }
   }  
 }
 )
 
-console.log(this.randomNumber)
+
 
 
 
