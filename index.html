@@ -61,7 +61,7 @@
 
                 <div id="contacts">
 
-                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click=" currentIndex = index ">
+                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index ">
 
                         <img :src=" `img/avatar` + contact.avatar + `.jpg` " alt="">
 
@@ -130,7 +130,7 @@
                     </span>
 
                     <input id="insert-message" type="text" placeholder="scrivi un messaggio" v-model=inputText
-                        v-on:keyup.enter= "pushObj">
+                        v-on:keyup.enter= "addMessage(); answer()">
 
                     <span>
 
