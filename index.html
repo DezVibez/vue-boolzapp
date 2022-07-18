@@ -61,7 +61,7 @@
 
                 <div id="contacts">
 
-                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index" v-if="searched === contact.name[0]">
+                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index" v-if="searched === contact.name || searched === '' ">
 
                         <img :src=" `img/avatar` + contact.avatar + `.jpg` " alt="">
 

@@ -36,7 +36,7 @@ const root = new Vue({
 
     inputText: "",
 
-    searched: "".toUpperCase(),
+    searched: "",
     
 
     user: {
