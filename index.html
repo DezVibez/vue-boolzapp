@@ -30,7 +30,7 @@
 
                 <div id="user-name" class="d-flex justify-content-between align-items-center">
                     <div class="p-3 fs-6">
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img src="img/avatar_io.jpg" alt="">
                         <span>{{user.name}}</span>
                     </div>
 
@@ -61,7 +61,7 @@
 
                 <div id="contacts">
 
-                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index" v-if="searched === contact.name || searched === '' ">
+                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index" v-if="contact.name.includes(searched.toUpperCase()) || searched === '' ">
 
                         <img :src=" `img/avatar` + contact.avatar + `.jpg` " alt="">
 
