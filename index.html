@@ -61,7 +61,7 @@
 
                 <div id="contacts">
 
-                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index" v-if="contact.name.includes(searched.toUpperCase()) || searched === '' ">
+                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index" v-if="contact.name.includes(capitalize(searched)) || searched === '' ">
 
                         <img :src=" `img/avatar` + contact.avatar + `.jpg` " alt="">
 
@@ -104,11 +104,11 @@
                 <div id="chat-box">
 
 
-                    <div v-for="(message, index) in contacts[currentIndex].messages" class="my-3 w-100">
+                    <div v-for="(message, index) in contacts[currentIndex].messages" class="my-3 w-100 d-flex">
 
-                        <div :class="message.status" class="d-flex">
+                        <div class="chat-container">
 
-                            <div id="message">
+                            <div id="message" :class="message.status">
                                 {{message.text}} <br> <small>{{message.date}}</small>
                             </div>
 

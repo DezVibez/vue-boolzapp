@@ -130,9 +130,10 @@ const root = new Vue({
 
   methods: {
 
-    ricercaCapitalizzata()
-    {this.searched.toUpperCase()
-    return this.searched},
+    capitalize(searched)
+{
+    return searched && searched[0].toUpperCase() + searched.slice(1);
+},
 
 
     addMessage() {
