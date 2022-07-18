@@ -55,13 +55,13 @@
                 <div id="search-chats">
 
                     <input id="search-chats-input" type="text"
-                        placeholder=" &#128269;     Cerca o inizia una nuova ricerca" value="">
+                        placeholder=" &#128269;     Cerca o inizia una nuova ricerca" value="" v-model="searched">
 
                 </div>
 
                 <div id="contacts">
 
-                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index ">
+                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index" v-if="searched === contact.name[0]">
 
                         <img :src=" `img/avatar` + contact.avatar + `.jpg` " alt="">
 

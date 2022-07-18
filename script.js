@@ -21,14 +21,10 @@ non dimentichiamo di fare analisi sia per la struttura dati che per la grafica
 procediamo a blocchettoni per evitare di avere poi problemi col CSS in fase avanzata
 Cerchiamo di rispettare tutti i principi e le best practices viste finora (nomi di variabili e classi, centralizzazione ecc) */
 
+/*Milestone 4
+Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)
+Trovate in allegato gli screenshot dell'app e una base di partenza coi dati utili per la milestone di oggi.*/
 
-/*Milestone 2 x Oggi
-Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
-Click sul contatto mostra la conversazione del contatto cliccato
-
-Milestone 3 x Oggi
-Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.*/
 
 console.log("Vue js ok", Vue)
 
@@ -39,6 +35,8 @@ const root = new Vue({
     currentIndex: 0,
 
     inputText: "",
+
+    searched: "".toUpperCase(),
     
 
     user: {
