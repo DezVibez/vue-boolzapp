@@ -38,6 +38,8 @@ const root = new Vue({
 
     searched: "",
     
+    randomAnswers: ["lol", "bene, grazie, te?", "Non ci credo!", "abbastanza", "ti ho già detto che non mi interessa", "si vabbè...",
+                  "Ma dopo passi al bar?", "no, dopo ho da fare...", "weee, mi han detto di passare da Giò che ha messo la piscina!"],
 
     user: {
       name: 'Nome Utente',
@@ -154,20 +156,25 @@ const root = new Vue({
       setTimeout(() => {
         const contactAnswer = {
           date: '10/01/2020 15:50:00',
-          text: 'ok',
+          text: this.randomAnswers[this.getRandomAnswers()],
           status: 'received'
         }
 
         this.contacts[this.currentIndex].messages.push(contactAnswer);
 
-       } , 3000)
+      } , 3000)
+    },
+
+    getRandomAnswers(){
       
-
-
+      return randomNumber = Math.floor(Math.random() * (this.randomAnswers.length + 1))
+      
     }
   }  
 }
 )
+
+console.log(this.randomNumber)
 
 
 
