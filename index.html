@@ -61,7 +61,7 @@
 
                 <div id="contacts">
 
-                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index" v-if="contact.name.includes(capitalize(searched)) || searched === '' ">
+                    <div class="contacts-card my-3" v-for="(contact,index) of contacts" @click="currentIndex = index" v-if="contact.name.toLowerCase().includes( searched.toLowerCase() ) || searched === '' ">
 
                         <img :src=" `img/avatar` + contact.avatar + `.jpg` " alt="">
 

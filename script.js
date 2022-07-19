@@ -39,7 +39,9 @@ const root = new Vue({
     searched: "",
     
     randomAnswers: ["lol", "bene, grazie, te?", "Non ci credo!", "abbastanza", "ti ho già detto che non mi interessa", "si vabbè...",
-                  "Ma dopo passi al bar?", "no, dopo ho da fare...", "weee, mi han detto di passare da Giò che ha messo la piscina!"],
+                  "Ma dopo passi al bar?", "no, dopo ho da fare...", "weee, mi han detto di passare da Giò che ha messo la piscina!", "fosse così facile...",
+                  "ieri com'è andata alla fine?", "guarda lascia stare...", "non ho niente da dire sinceramente.", "AHAHAHAHAHAHA",
+                  "chiama quando sei sotto"],
 
     user: {
       name: 'Nome Utente',
@@ -131,11 +133,6 @@ const root = new Vue({
 
 
   methods: {
-
-    capitalize(searched)
-{
-    return searched && searched[0].toUpperCase() + searched.slice(1);
-},
 
 
     addMessage() {
