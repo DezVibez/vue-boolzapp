@@ -32,11 +32,6 @@ background-color: rgb(234,234,234);
 
 }
 
-#user-name img{
-border-radius: 50%;
-width: 16%;
-}
-
 #bot-names{
 height: 60px;
 width: 100%;
